@@ -1,0 +1,23 @@
+@model IEnumerable<ShoppingCartApp.Models.Product>
+<h2>Products</h2>
+<table class="table table-bordered">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Price</th>
+<th></th>
+</tr>
+@foreach(var item in Model)
+{
+<tr>
+<td>@item.ProductID</td>
+<td>@item.ProductName</td>
+<td>@item.Price</td>
+<td>
+@Html.ActionLink("Add To Cart","AddToCart",
+new{id=item.ProductID})
+</td>
+</tr>
+}
+</table>
